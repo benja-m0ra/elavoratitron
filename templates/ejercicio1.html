@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Ejercicio 1{% endblock %}
+
+{% block content %}
+<h2>Formulario de Notas</h2>
+<form method="post">
+    <input type="number" name="nota1" placeholder="Nota 1" required>
+    <input type="number" name="nota2" placeholder="Nota 2" required>
+    <input type="number" name="nota3" placeholder="Nota 3" required>
+    <input type="number" name="asistencia" placeholder="Asistencia (%)" required>
+    <button type="submit">Enviar</button>
+</form>
+
+{% if resultado is not none %}
+    <p>Promedio: {{ resultado }}</p>
+    <p>Estado: {{ estado }}</p>
+{% endif %}
+
+<a href="/"><button>Volver</button></a>
+{% endblock %}
